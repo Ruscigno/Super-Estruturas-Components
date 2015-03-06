@@ -3,7 +3,12 @@ unit useAplicacao;
 interface
 
 uses
-  System.Classes, useGeneral;
+  {$IF RTLVersion >= 19}
+    System.Classes,
+  {$ELSE}
+    Classes,
+  {$IFEND}
+  useGeneral;
 
 type
   TseAplicacao = class(TComponent)
@@ -14,8 +19,8 @@ type
     FbLogAutoSave: Boolean;
     FfrmMenu: TComponent;
     FLog: TStringList;
-    FncdInstalacao: integer;
-    FncdSistema: integer;
+//    FncdInstalacao: integer;
+//    FncdSistema: integer;
     FoUsuario : String;
     FsLogFile: string;
     FsConfigFile: string;
@@ -63,7 +68,12 @@ var
 implementation
 
 uses
-  System.SysUtils, useFunctions, useConstants;
+  {$IF RTLVersion >= 19}
+    System.SysUtils,
+  {$ELSE}
+    SysUtils,
+  {$IFEND}
+  useFunctions, useConstants;
 
 { TseAplicacao }
 

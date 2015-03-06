@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2015/03/06 10:48:40.874.dproj,C:\Users\desenvolvimento\Documents\RAD Studio\Projects\Package1.dproj=V:\Desenv\delphi\Super-Estruturas-Components\packages\d11\seCommonComponents.dproj</Transaction>
+    <Transaction>2015/03/06 11:12:43.280.dproj,V:\Desenv\delphi\Super-Estruturas-Components\packages\d11\seCommonComponents.dproj=V:\Desenv\delphi\Super-Estruturas-Components\packages\d11\seComponents.dproj</Transaction>
+    <Transaction>2015/03/06 11:13:07.462.pas,V:\Desenv\delphi\Super-Estruturas-Components\source\class\useAplicacao.pas=</Transaction>
+    <Transaction>2015/03/06 11:20:33.009.dproj,V:\Desenv\delphi\Super-Estruturas-Components\packages\d11\seComponents.dproj=V:\Desenv\delphi\Super-Estruturas-Components\packages\d11\seDBComponents.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

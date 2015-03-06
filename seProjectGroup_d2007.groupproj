@@ -1,0 +1,54 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{6e844314-8a8c-46b0-9157-11326a55ad68}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Projects Include="packages\d11\seComponents.dproj" />
+    <Projects Include="packages\d11\seComponentsDesign.dproj" />
+    <Projects Include="packages\d11\seDBComponents.dproj" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+<BorlandProject xmlns=""><Default.Personality></Default.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Target Name="seComponents">
+    <MSBuild Projects="packages\d11\seComponents.dproj" Targets="" />
+  </Target>
+  <Target Name="seComponents:Clean">
+    <MSBuild Projects="packages\d11\seComponents.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="seComponents:Make">
+    <MSBuild Projects="packages\d11\seComponents.dproj" Targets="Make" />
+  </Target>
+  <Target Name="seComponentsDesign">
+    <MSBuild Projects="packages\d11\seComponentsDesign.dproj" Targets="" />
+  </Target>
+  <Target Name="seComponentsDesign:Clean">
+    <MSBuild Projects="packages\d11\seComponentsDesign.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="seComponentsDesign:Make">
+    <MSBuild Projects="packages\d11\seComponentsDesign.dproj" Targets="Make" />
+  </Target>
+  <Target Name="seDBComponents">
+    <MSBuild Projects="packages\d11\seDBComponents.dproj" Targets="" />
+  </Target>
+  <Target Name="seDBComponents:Clean">
+    <MSBuild Projects="packages\d11\seDBComponents.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="seDBComponents:Make">
+    <MSBuild Projects="packages\d11\seDBComponents.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Build">
+    <CallTarget Targets="seComponents;seComponentsDesign;seDBComponents" />
+  </Target>
+  <Target Name="Clean">
+    <CallTarget Targets="seComponents:Clean;seComponentsDesign:Clean;seDBComponents:Clean" />
+  </Target>
+  <Target Name="Make">
+    <CallTarget Targets="seComponents:Make;seComponentsDesign:Make;seDBComponents:Make" />
+  </Target>
+  <Import Condition="Exists('$(MSBuildBinPath)\Borland.Group.Targets')" Project="$(MSBuildBinPath)\Borland.Group.Targets" />
+</Project>

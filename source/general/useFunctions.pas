@@ -29,8 +29,12 @@ procedure SetConfigFile(const Value: string; var pVariable : string);
 implementation
 
 uses
-  System.SysUtils, System.Classes, useAplicacao, System.Variants, System.Math,
-  FMX.Dialogs, System.UITypes, System.StrUtils;
+  {$IF RTLVersion >= 19}
+    System.SysUtils, System.Classes, System.Variants, System.Math, FMX.Dialogs,
+    System.UITypes, System.StrUtils;
+  {$ELSE}
+    SysUtils, Classes, Variants, Math, Dialogs, StrUtils;
+  {$IFEND}
 
 function GetAppConfigFile : string;
 begin
