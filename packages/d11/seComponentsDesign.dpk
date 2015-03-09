@@ -32,6 +32,7 @@ requires
   dbrtl;
 
 contains
-  useAplicacao in '..\..\source\class\useAplicacao.pas';
+  useApplication in '..\..\source\class\useApplication.pas',
+  useComponentsDesign in 'useComponentsDesign.pas';
 
 end.

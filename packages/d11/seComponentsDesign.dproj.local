@@ -7,5 +7,7 @@
     <Transaction>2015/03/06 11:13:34.729.dproj,V:\Desenv\delphi\Super-Estruturas-Components\packages\d11\seComponents.dproj=V:\Desenv\delphi\Super-Estruturas-Components\packages\d11\seComponentsDesign.dproj</Transaction>
     <Transaction>2015/03/06 11:14:35.600.pas,V:\Desenv\delphi\Super-Estruturas-Components\source\class\useConfigFile.pas=</Transaction>
     <Transaction>2015/03/06 11:14:38.616.pas,V:\Desenv\delphi\Super-Estruturas-Components\source\class\useZipFiles.pas=</Transaction>
+    <Transaction>2015/03/06 11:57:02.089.pas,V:\Desenv\delphi\Super-Estruturas-Components\packages\d11\Unit1.pas=V:\Desenv\delphi\Super-Estruturas-Components\packages\useRegister.pas</Transaction>
+    <Transaction>2015/03/06 11:59:03.780.pas,V:\Desenv\delphi\Super-Estruturas-Components\packages\useRegister.pas=V:\Desenv\delphi\Super-Estruturas-Components\packages\d11\useComponentsDesign.pas</Transaction>
   </Transactions>
 </BorlandProject>

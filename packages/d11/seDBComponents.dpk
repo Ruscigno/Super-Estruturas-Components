@@ -25,10 +25,21 @@ package seDBComponents;
 {$DESCRIPTION 'Super Estruturas - Database components'}
 {$LIBSUFFIX '180'}
 {$IMPLICITBUILD ON}
+{$DEFINE ZEOSLIB}
 
 requires
   rtl,
   vcl,
-  dbrtl;
+  dbrtl,
+  ZComponent,
+  ZParseSql,
+  ZCore,
+  ZDbc,
+  ZPlain,
+  seComponentsDesign;
+
+contains
+  useConnection in '..\..\source\database\useConnection.pas',
+  useDBComponents in 'useDBComponents.pas';
 
 end.

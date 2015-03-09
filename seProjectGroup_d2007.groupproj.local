@@ -1,9 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-	<Transactions>
-    <Transaction>2015/03/06 11:15:27.804.groupproj,C:\Users\desenvolvimento\Documents\RAD Studio\Projects\ProjectGroup1.groupproj=V:\Desenv\delphi\Super-Estruturas-Components\seProjectGroup_d11.groupproj</Transaction>
-  </Transactions>
-	<Default.Personality>
-		<Projects ActiveProject="seComponents180.bpl.100"/>
-	</Default.Personality>
+  <Transactions/>
+  <Default.Personality>
+    <Projects ActiveProject="seDBComponents180.bpl"/>
+  </Default.Personality>
 </BorlandProject>

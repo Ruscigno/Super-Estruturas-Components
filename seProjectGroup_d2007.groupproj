@@ -1,6 +1,6 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <ProjectGuid>{6e844314-8a8c-46b0-9157-11326a55ad68}</ProjectGuid>
+    <ProjectGuid>{124cbe1e-cf28-451e-8b7c-80d48a2c25eb}</ProjectGuid>
   </PropertyGroup>
   <ItemGroup />
   <ItemGroup>
@@ -12,7 +12,7 @@
     <Borland.Personality>Default.Personality</Borland.Personality>
     <Borland.ProjectType />
     <BorlandProject>
-<BorlandProject xmlns=""><Default.Personality></Default.Personality></BorlandProject></BorlandProject>
+  <BorlandProject xmlns=""> <Default.Personality> </Default.Personality> </BorlandProject></BorlandProject>
   </ProjectExtensions>
   <Target Name="seComponents">
     <MSBuild Projects="packages\d11\seComponents.dproj" Targets="" />

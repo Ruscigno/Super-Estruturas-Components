@@ -1,4 +1,4 @@
-unit useAplicacao;
+unit useApplication;
 
 interface
 
@@ -11,7 +11,7 @@ uses
   useGeneral;
 
 type
-  TseAplicacao = class(TComponent)
+  TseApplication = class(TComponent)
   private
     FbConnCreated : Boolean;
     FbFileLoaded : Boolean; //Já leu o arquivo de log? Ao iniciar?
@@ -45,7 +45,7 @@ type
     property Usuario : String read FoUsuario write FoUsuario;
   end;
 //
-//  TseAplicacaoDB = class(TseAplicacao)
+//  TseApplicationDB = class(TseApplication)
 //  private
 //    FbConnCreated : Boolean;
 //    FogConnection : TmpgConnection;
@@ -61,7 +61,7 @@ type
 //  end;
 
 var
-  oAplicacao : TseAplicacao;
+  oAplicacao : TseApplication;
   sFormCadCompleto : string;
   onCont : integer;
 
@@ -75,9 +75,9 @@ uses
   {$IFEND}
   useFunctions, useConstants;
 
-{ TseAplicacao }
+{ TseApplication }
 
-constructor TseAplicacao.Create(AOwner : TComponent);
+constructor TseApplication.Create(AOwner : TComponent);
 begin
   inherited;
   FbConnCreated := False;
@@ -90,20 +90,20 @@ begin
     oAplicacao := Self;
 end;
 
-procedure TseAplicacao.AddLog(psSection, psLog: string);
+procedure TseApplication.AddLog(psSection, psLog: string);
 begin
   Log.Add(FormatDateTime('dd/mm/yyy hh:nn:ss:zzz', Now) + ' [' + psSection + '] ' + psLog);
   if (FbLogAutoSave) then
     SaveLog;
 end;
 
-destructor TseAplicacao.Destroy;
+destructor TseApplication.Destroy;
 begin
   FreeAndNil(FLog);
   inherited;
 end;
 
-procedure TseAplicacao.SaveLog(psFile : string = ''; OnLog : TSimpleEvent = nil);
+procedure TseApplication.SaveLog(psFile : string = ''; OnLog : TSimpleEvent = nil);
 begin
   if (psFile = '') then
   begin
@@ -124,13 +124,13 @@ begin
     OnLog;
 end;
 
-procedure TseAplicacao.ClearOutOfBounds;
+procedure TseApplication.ClearOutOfBounds;
 begin
   while FLog.Count > 20000 do
     FLog.Delete(0);
 end;
 
-procedure TseAplicacao.ReloadFile;
+procedure TseApplication.ReloadFile;
 var
   oFileToSave : TStringList;
 begin
@@ -149,38 +149,38 @@ begin
 end;
 
 
-procedure TseAplicacao.Notification(AComponent: TComponent; Operation: TOperation);
+procedure TseApplication.Notification(AComponent: TComponent; Operation: TOperation);
 begin
   inherited;
 end;
 
-class procedure TseAplicacao.StartMyApplication;
+class procedure TseApplication.StartMyApplication;
 begin
   onCont := 0;
   sFormCadCompleto := sfseCadCompleto;
   if not Assigned(oAplicacao) then
-    oAplicacao := TseAplicacao.Create(nil);
+    oAplicacao := TseApplication.Create(nil);
 end;
 
-class procedure TseAplicacao.StopMyApplication;
+class procedure TseApplication.StopMyApplication;
 begin
   if Assigned(oAplicacao) then
     FreeAndNil(oAplicacao);
 end;
 
-procedure TseAplicacao.SetConfigFile(const Value: string);
+procedure TseApplication.SetConfigFile(const Value: string);
 begin
   useFunctions.SetConfigFile(Value, FsConfigFile);
 end;
 
-//constructor TseAplicacaoDB.Create(AOwner : TComponent);
+//constructor TseApplicationDB.Create(AOwner : TComponent);
 //begin
 //  inherited;
 //  FsqlExecs := TmpgSQLProcessor.Create(nil);
 //  FbConnCreated := False;
 //end;
 //
-//destructor TseAplicacaoDB.Destroy;
+//destructor TseApplicationDB.Destroy;
 //begin
 //  FreeAndNil(FsqlExecs);
 //  if (FbConnCreated) then
@@ -188,7 +188,7 @@ end;
 //  inherited;
 //end;
 
-//procedure TseAplicacaoDB.Initialize;
+//procedure TseApplicationDB.Initialize;
 //begin
 //  if not Assigned(FogConnection) then
 //  begin
@@ -198,14 +198,14 @@ end;
 //  end;
 //end;
 //
-//procedure TseAplicacaoDB.Notification(AComponent: TComponent; Operation: TOperation);
+//procedure TseApplicationDB.Notification(AComponent: TComponent; Operation: TOperation);
 //begin
 //  inherited;
 //  if (Operation = opRemove) and (AComponent = FogConnection) then
 //    FogConnection := nil;
 //end;
 //
-//procedure TseAplicacaoDB.SetConnection(const Value: TmpgConnection);
+//procedure TseApplicationDB.SetConnection(const Value: TmpgConnection);
 //begin
 //  if (Value <> FogConnection) then
 //  begin
@@ -216,7 +216,7 @@ end;
 //  end;
 //end;
 //
-//function TseAplicacaoDB.GetConnection: TmpgConnection;
+//function TseApplicationDB.GetConnection: TmpgConnection;
 //begin
 //  if not Assigned(FogConnection) and not (FbConnCreated) then
 //    Initialize;
@@ -224,10 +224,10 @@ end;
 //end;
 
 //initialization
-//  TseAplicacao.StartMyApplication;
+//  TseApplication.StartMyApplication;
 //
 //finalization
-//  TseAplicacao.StopMyApplication;
+//  TseApplication.StopMyApplication;
 
 end.
 
