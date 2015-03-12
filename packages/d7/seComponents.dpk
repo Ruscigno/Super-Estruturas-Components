@@ -1,4 +1,4 @@
-package seDBComponents;
+package seComponents;
 
 {$R *.res}
 {$ALIGN 8}
@@ -22,24 +22,21 @@ package seDBComponents;
 {$WRITEABLECONST OFF}
 {$MINENUMSIZE 1}
 {$IMAGEBASE $400000}
-{$DESCRIPTION 'Super Estruturas - Database components'}
-{$LIBSUFFIX '180'}
+{$DESCRIPTION 'Super Estruturas - Run time components'}
+{$LIBSUFFIX '150'}
+{$RUNONLY}
 {$IMPLICITBUILD ON}
-{$DEFINE ZEOSLIB}
 
 requires
   rtl,
   vcl,
-  dbrtl,
-  ZComponent,
-  ZParseSql,
-  ZCore,
-  ZDbc,
-  ZPlain,
-  seComponentsDesign;
+  dbrtl;
 
 contains
-  useConnection in '..\..\source\database\useConnection.pas',
-  useDBComponents in 'useDBComponents.pas';
+  useConfigFile in '..\..\source\class\useConfigFile.pas',
+  useZipFiles in '..\..\source\class\useZipFiles.pas',
+  useConstants in '..\..\source\general\useConstants.pas',
+  useFunctions in '..\..\source\general\useFunctions.pas',
+  useGeneral in '..\..\source\general\useGeneral.pas';
 
 end.
